@@ -5,9 +5,9 @@ import 'package:cli/handler.dart';
 import 'package:dotenv/dotenv.dart';
 import 'package:nyxx/nyxx.dart';
 
-final env = DotEnv(includePlatformEnvironment: true)..load();
+final env = DotEnv()..load();
 void main() async {
-  final token = "NzYwMTQzNjE1MTI0NDM5MDQw.X3Hw6A.HDLp2TUML_5cl-4xdi3KRQs88Zs";
+  final token = env['TOKEN']!;
 
   final allowedMentions = AllowedMentions()..allow(everyone: false);
   final clientOptions = ClientOptions(
